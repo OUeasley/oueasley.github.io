@@ -73,7 +73,7 @@
 
 </head>
 <body class="{{ post.title | downcase | replace:' ','-' | replace:',','' | strip_html }}{% if page.category %} category-{{ page.category }}{% endif %}{% if page.layout-class %} layout-{{ page.layout-class }}{% endif %}">
-
+<div class="container-fluid">
     <nav class="navbar navbar-full navbar-dark bg-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -97,4 +97,4 @@
         </div>
     </nav>
 
-
+</div>

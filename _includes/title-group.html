@@ -1,17 +1,19 @@
 {% if page.featured_image or page.featured_video_id %}
-    <div class="topper">
-        {% if page.featured_image %}
-        <span class="img" style="background-image: url('{{ page.featured_image }}');">
+<div class="topper">
+    {% if page.featured_image %}
+    <span class="img" style="background-image: url('{{ page.featured_image }}');">
         {% endif %}
 
         {% if page.featured_video_id %}
-        <iframe src="https://www.youtube.com/embed/{{ page.featured_video_id }}" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/{{ page.featured_video_id }}" frameborder="0"
+                allowfullscreen></iframe>
         {% endif %}
-    </div>
+</div>
 {% endif %}
-
-<div class="title-group">
-    <h1 class="special">
+<div class="container">
+    <div class="col-md-12">
+        <div class="row">
+            <h1 class="special col-md-12">
         <span>
         {% if page.title %}
             {{ page.title }}
@@ -19,25 +21,33 @@
             {{ site.data.global.title }}
         {% endif %}
         </span>
-    </h1>
-    {% if page.id %}
-    <aside>
-        {{ page.date | date: "%m.%d.%y" }}
-        {% if page.categories != empty %}
-            &middot;
-            {% for category in page.categories %}
+            </h1>
+        </div>
+
+        {% if page.id %}
+
+        <div class="row">
+            <aside class="col-md-12 text-muted">
+                {{ page.date | date: "%m.%d.%y" }}
+                {% if page.categories != empty %}
+                &middot;
+                {% for category in page.categories %}
                 <span>{{ category }}</span>
-            {% endfor %}
+                {% endfor %}
+                {% endif %}
+            </aside>
+        </div>
         {% endif %}
-    </aside>
-    {% endif %}
-    <p class="lead">
-        {% if page.lead_text %}
-            {{ page.lead_text }}
-        {% elsif post.lead_text %}
-            {{ post.lead_text }}
-        {% else %}
-            {{ site.data.global.description }}
-        {% endif %}
-    </p>
+        <div class="row">
+            <p class=" col-md-12 lead">
+                {% if page.lead_text %}
+                {{ page.lead_text }}
+                {% elsif post.lead_text %}
+                {{ post.lead_text }}
+                {% else %}
+                {{ site.data.global.description }}
+                {% endif %}
+            </p>
+        </div>
+    </div>
 </div>

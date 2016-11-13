@@ -1,19 +1,35 @@
 {% include header.html %}
 
-    {% include title-group.html %}
+{% include title-group.html %}
 
-    <main>
-        <div class="container">
+<main>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 card-group">
+                {% for post in paginator.posts limit:3%}
+                {% include tile.html %}
+                {% endfor %}
+            </div>
+            <div class="col-md-12 card-group">
+                {% for post in paginator.posts limit:3 offset:3%}
+                {% include tile.html %}
+                {% endfor %}
+            </div>
+            <div class="col-md-12 card-group">
+                {% for post in paginator.posts limit:3 offset:3%}
+                {% include tile.html %}
+                {% endfor %}
+            </div>
             <div class="row">
-                <div class="col-md-12">
-                    {% for post in paginator.posts %}
-                        {% include tile.html %}
-                    {% endfor %}
-
-                    {% include pagination.html %}
-                </div>
+                <div class="col-md-12"/>
+                {% include pagination.html %}
             </div>
         </div>
-    </main>
+
+    </div>
+
+    </div>
+</main>
 
 {% include footer.html %}
