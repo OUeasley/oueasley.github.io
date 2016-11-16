@@ -10,44 +10,48 @@
         {% endif %}
 </div>
 {% endif %}
-<div class="container text-md-center">
-    <div class="col-md-12">
-        <div class="row">
-            <h1 class="special col-md-12">
+{% if page.title %}
+<div class="jumbotron jumbotron-fluid text-md-center">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row">
+                <h1 class="special col-md-12">
         <span>
-        {% if page.title %}
+
             {{ page.title }}
-        {% else %}
-            {{ site.data.global.title }}
-        {% endif %}
+
         </span>
-            </h1>
-        </div>
+                </h1>
+            </div>
 
-        {% if page.id %}
+            {% if page.id %}
 
-        <div class="row">
-            <aside class="col-md-12 text-muted">
-                {{ page.date | date: "%m.%d.%y" }}
-                {% if page.categories != empty %}
-                &middot;
-                {% for category in page.categories %}
-                <span>{{ category }}</span>
-                {% endfor %}
-                {% endif %}
-            </aside>
-        </div>
-        {% endif %}
-        <div class="row">
-            <p class=" col-md-12 lead">
-                {% if page.lead_text %}
-                {{ page.lead_text }}
-                {% elsif post.lead_text %}
-                {{ post.lead_text }}
-                {% else %}
-                {{ site.data.global.description }}
-                {% endif %}
-            </p>
+            <div class="row">
+                <aside class="col-md-12 text-muted">
+                    {{ page.date | date: "%m.%d.%y" }}
+                    {% if page.categories != empty %}
+                    &middot;
+                    {% for category in page.categories %}
+                    <span>{{ category }}</span>
+                    {% endfor %}
+                    {% endif %}
+                </aside>
+            </div>
+            {% endif %}
+            <div class="row">
+                <p class=" col-md-12 lead">
+                    {% if page.lead_text %}
+                    {{ page.lead_text }}
+                    {% elsif post.lead_text %}
+                    {{ post.lead_text }}
+                    {% else %}
+                    {{ site.data.global.description }}
+                    {% endif %}
+                </p>
+            </div>
         </div>
     </div>
 </div>
+{% else %}
+
+{% endif %}

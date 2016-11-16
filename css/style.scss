@@ -1,16 +1,44 @@
 ---
 ---
+
 @import '../_sass/bootstrap/bootstrap';
 @import '../_sass/_syntax-highlighting';
-
 
 $scotch-primary: rgb(255, 69, 69);
 $scotch-secondary: #FF7B7B;
 
-%oswald { font-family: 'Oswald', sans-serif; }
-%roboto { font-family: 'Roboto Condensed', sans-serif; }
-
-body{
-  padding-top: 70px;
+%oswald {
+  font-family: 'Oswald', sans-serif;
 }
 
+%roboto {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+html, body, main, article {
+  height: 100%
+}
+
+main {
+  a {
+    color: #711c80;
+  }
+}
+
+footer {
+  background-color: #711c80;
+  color: #dddddd;
+}
+
+.main-background {
+  height: 350px;
+  background: url(/css/family.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  margin-bottom: 100px;
+
+  .navbar {
+    opacity: .5;
+  }
+}
