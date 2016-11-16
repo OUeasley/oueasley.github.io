@@ -28,6 +28,9 @@ main {
 footer {
   background-color: #711c80;
   color: #dddddd;
+  position: relative;
+  float: left;
+  width: 100%;
 }
 
 .main-background {
@@ -36,9 +39,26 @@ footer {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 
   .navbar {
     opacity: .5;
   }
+}
+
+.fa {
+  font-size: 24px;
+}
+
+.spacer {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.footer-quote{
+  font-size: 12px;
+}
+
+.article-line{
+  width: 50%;
 }
